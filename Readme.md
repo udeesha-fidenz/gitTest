@@ -53,3 +53,15 @@ git rebase
 ```bash
 git grep hello
 ```
+
+### GIT Abort Merge
+
+```bash
+use "git merge --abort" to abort the merge
+```
+### GIT branch delete 
+
+```bash
+git branch -d branch name 
+```
+
