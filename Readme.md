@@ -40,6 +40,7 @@ git svn
 
 ```bash
 git log
+git log --online 
 ```
 ### GIT Rebase
 
@@ -107,4 +108,40 @@ git rebase -i HEAD~<number-of-commits>
 or
 git rebase -i <commit-hash>
 --------------------------------------
+```
+### Flow of the branches
+
+we're going to create a develop branch from the main branch 
+
+Feature branches are created from develope and merged back to the develop when finishes
+
+When enough Features are ready, a release branch is created from a develop branch
+
+once the release is stable, release branch is merged into main and develop. main is tagged with a version
+
+If a critical bug is found in production, a hotfix branch is created from main, fixed and merged in to both main and develop
+
+### GIT rev-parse HEAD
+
+git rev - parse HEAD is a command that resolves the HEAD reference to its corresponding commit ID (SHA-1) hash
+
+HEAD - Symbolic reference that points to the currently checkout commit
+
+```bash
+git rev-parse HEAD
+```
+
+### Atomic Commits	
+
+A fundamental best practice. It means each commit should represent a single, isolated change (e.g., one commit for a bug fix, one for a feature, one for refactoring). This makes history easy to read and reverting/debugging much safer.	
+
+```bash
+git add -p (Interactive staging)
+```
+### GIT reflog
+
+The "safety net." It's a record of where your HEAD has been in your local repository. If you accidentally delete a branch or hard-reset and lose commits, reflog helps you find and recover them.
+
+```bash
+git reflog
 ```
