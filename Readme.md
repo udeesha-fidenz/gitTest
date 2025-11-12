@@ -11,7 +11,7 @@ Use git mergetool to run one of several merge utilities to resolve merge conflic
 ```bash
 git mergetool [--tool=<tool>] [-y | --[no-]prompt] [<file>…​]
 ```
-## GIT Stash
+### GIT Stash
 
 ```bash
 git stash
@@ -145,3 +145,19 @@ The "safety net." It's a record of where your HEAD has been in your local reposi
 ```bash
 git reflog
 ```
+
+### GIT bisect
+
+A powerful debugging tool that uses a binary search algorithm to automatically find the first commit that introduced a bug, saving hours of manual searching through history.
+
+```bash
+git bisect
+```
+
+### GIT Hooks 
+
+#### Pre-commit
+Run before a commit is finalized most common use is running a linter or formatter
+
+#### commit-msg
+Runs after commit message is created.Used to enforce rules for commit message
