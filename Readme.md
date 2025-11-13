@@ -4,6 +4,13 @@
 
 Version contol is also known as source control is the practice of tracking and managing changes to software code
 
+### Architecture of git
+
+There is a 3 states-
+
+- Working Directory
+- Staging Area (Index) - waiting area
+- Repository (HEAD)
 ### GIT MERGE TOOL-
 
 Use git mergetool to run one of several merge utilities to resolve merge conflicts. It is typically run after git merge.
@@ -17,6 +24,8 @@ git mergetool [--tool=<tool>] [-y | --[no-]prompt] [<file>…​]
 git stash
 git stash list
 git stash apply
+git stash pop
+git stash apply stash@{n}
 ```
 ### GIT remove rm
 
