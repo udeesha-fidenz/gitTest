@@ -196,3 +196,4 @@ git config --global alias.mep '!do_merge _and_push() { git merge "$1" && git pus
 # Whenever we want to use that command 
 git mep test
 ```
+update_test
