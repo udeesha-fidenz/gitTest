@@ -161,3 +161,16 @@ Run before a commit is finalized most common use is running a linter or formatte
 
 #### commit-msg
 Runs after commit message is created.Used to enforce rules for commit message
+
+#### if I create a branch in the local repo, this is how we push that to the remote
+
+```bash
+ git push --set-upstream origin test
+```
+### GIT Add
+
+```bash
+git add file_name -to stage sigle specific file 
+
+git add . - to stage all the files in the current directory
+```
