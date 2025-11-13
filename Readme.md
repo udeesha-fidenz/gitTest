@@ -174,3 +174,16 @@ git add file_name -to stage sigle specific file
 
 git add . - to stage all the files in the current directory
 ```
+### Custom commands
+This is the value of the alias, enclosed in single quotes. It's the complex part that tells Git to run a shell command sequence.
+
+```bash
+'!f() { ... }; f'
+```
+
+```bash
+git config --global alias.mep '!do_merge _and_push() { git merge "$1" && git push; }; do_merge_and_push'
+
+# Whenever we want to use that command 
+git mep test
+```
