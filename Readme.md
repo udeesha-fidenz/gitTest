@@ -11,6 +11,10 @@ There is a 3 states-
 - Working Directory
 - Staging Area (Index) - waiting area
 - Repository (HEAD)
+
+Hashing File contents:When I add a file to git using git add  or commit changes,Git calculate unique SHA-1 hash for the exact content of that file this hash act as a fingerprint . if even a single character in a file changes the hash will be completely different.
+
+The Index (staging Area):Git maintains an "index"(also known as the staging area) which is a snapshot of the files you intend to commit 
 ### GIT MERGE TOOL-
 
 Use git mergetool to run one of several merge utilities to resolve merge conflicts. It is typically run after git merge.
@@ -49,7 +53,7 @@ git svn
 
 ```bash
 git log
-git log --online 
+git log --oneline 
 ```
 ### GIT Rebase
 
@@ -197,3 +201,28 @@ git config --global alias.mep '!do_merge _and_push() { git merge "$1" && git pus
 git mep test
 ```
 update_test
+
+### GIT revert vs GIT reset
+
+git reset - is a destructive operation that reqrites by removing commits it's best for local, private history cleanup.
+
+git revert is a non-destructive operation that preserves history by creating a brand-new commit that undoes the changes of a prevoius commit.it is safe for public,shared history.
+
+
+
+
+
+
+#### Extra - 
+git commit -a  -m "New line added" -skip stage environment
+git show HEAD - Show the changes introduced in the most recent commit.
+git commit -h -show summer for
+git branch -d hello-you - to remove branch from the local repo
+pull is a combination of: Fetch+Merge
+git push --tags -push all local tags to the remote repository
+git push origin --delete feature - How to delete a branch named features from the remote 
+git switch -c branch-name
+git branch -a -list all local and remote branches
+git branch -r -list all remote branches
+git commit --amend -
+git rebase --continue -
