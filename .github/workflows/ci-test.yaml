@@ -1,0 +1,43 @@
+name: Dotnet CI
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - test
+
+jobs:
+  build_and_test:
+    name: Build & Test (.NET)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          
+          dotnet-version: '8.x' 
+
+      - name: Restore Dependencies
+        run: dotnet restore
+
+      - name: Build Project
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Run Unit Tests
+        run: dotnet test --no-build
+
+  auto_merge:
+    name: Auto Merge if Checks Pass
+    needs: build_and_test
+    runs-on: ubuntu-latest
+    if: success() && github.event_name == 'pull_request' && github.base_ref == 'test'
+    steps:
+      - name: Merge PR to Test
+        uses: pascalgn/automerge-action@v0.17.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_METHOD: squash
+          PULL_REQUEST: ${{ github.event.pull_request.number }}
