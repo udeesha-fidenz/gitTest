@@ -30,14 +30,14 @@ jobs:
     needs: build_and_test 
     runs-on: ubuntu-latest
     if: success() && github.event_name == 'pull_request' && github.base_ref == 'test'
-  
+ 
     permissions:
       contents: write
       pull-requests: write
       
     steps:
       - name: Merge PR to Test Branch
-        uses: pascalgn/automerge-action@v0.17.0
+        uses: pascalgn/automerge-action@v0.17
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MERGE_METHOD: squash
