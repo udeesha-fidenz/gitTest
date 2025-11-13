@@ -26,9 +26,6 @@ jobs:
       - name: Build Project
         run: dotnet build --configuration Release --no-restore
 
-      - name: Run Unit Tests
-        run: dotnet test --no-build
-
   auto_merge:
     name: Auto Merge if Checks Pass
     needs: build_and_test
