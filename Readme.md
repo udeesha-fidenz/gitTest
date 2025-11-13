@@ -15,6 +15,10 @@ There is a 3 states-
 Hashing File contents:When I add a file to git using git add  or commit changes,Git calculate unique SHA-1 hash for the exact content of that file this hash act as a fingerprint . if even a single character in a file changes the hash will be completely different.
 
 The Index (staging Area):Git maintains an "index"(also known as the staging area) which is a snapshot of the files you intend to commit 
+
+Hashing File contents:When I add a file to git using git add  or commit changes,Git calculate unique SHA-1 hash for the exact content of that file this hash act as a fingerprint . if even a single character in a file changes the hash will be completely different.
+
+The Index (staging Area):Git maintains an "index"(also known as the staging area) which is a snapshot of the files you intend to commit 
 ### GIT MERGE TOOL-
 
 Use git mergetool to run one of several merge utilities to resolve merge conflicts. It is typically run after git merge.
@@ -53,6 +57,7 @@ git svn
 
 ```bash
 git log
+git log --oneline 
 git log --oneline 
 ```
 ### GIT Rebase
