@@ -208,11 +208,6 @@ git reset - is a destructive operation that reqrites by removing commits it's be
 
 git revert is a non-destructive operation that preserves history by creating a brand-new commit that undoes the changes of a prevoius commit.it is safe for public,shared history.
 
-
-
-
-
-
 #### Extra - 
 git commit -a  -m "New line added" -skip stage environment
 git show HEAD - Show the changes introduced in the most recent commit.
@@ -226,3 +221,13 @@ git branch -a -list all local and remote branches
 git branch -r -list all remote branches
 git commit --amend -
 git rebase --continue -
+git rebase --abort
+git checkout -b branch-name abc123 -Restore a deleted branch from a commit hash
+*.png - ignore all the files with png extention
+.gitarributes -to set file handling riles like line endings, Binary/text. or custom diff
+git lfs install -
+
+git LFS-atores pointers on repo file on a storage
+
+git commit -s -m "This is a sign commit" - sign version of the commit
+git am 0001-some-change.patch
